@@ -1,5 +1,10 @@
+import { demo } from '~/components/demo/locale-ru'
+import { groups } from '~/components/groups/locale-ru'
 
 export default {
+  demo,
+  groups,
+
   common: {
     date: 'Дата',
     open: 'Открыть',

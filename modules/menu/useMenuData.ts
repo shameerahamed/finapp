@@ -26,6 +26,18 @@ export default function useMenuData() {
       component: 'UiIconCategory',
       name: i18n.t('categories.name'),
     },
+    analytics: {
+      private: true,
+      icon: 'mdi mdi-poll',
+      name: i18n.t('analytics.title'),
+      isBeta: true,
+    },
+    groups: {
+      private: true,
+      icon: 'mdi mdi-folder-multiple-outline',
+      name: i18n.t('groups.title'),
+      isBeta: true,
+    },
     history: {
       icon: 'mdi mdi-history',
       name: i18n.t('trns.history'),

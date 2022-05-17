@@ -43,6 +43,10 @@ export default {
     wallet() {
       return this.$store.state.wallets.items[this.$store.state.trns.items[this.trnId].walletId]
     },
+
+    groups() {
+      return this.$store.getters['groups/groups']
+    },
   },
 
   methods: {
@@ -94,6 +98,11 @@ export default {
       this.showModalConfirm = false
       this.$store.commit('trns/hideTrnModal')
       this.$store.commit('trns/setTrnModalId', null)
+    },
+
+    toogleAddToGroup(groupId) {
+      this.$store.dispatch('groups/toogleAddToGroup', { groupId, trnId: this.trnId })
+      this.showModalGroups = false
     },
   },
 }
@@ -168,6 +177,13 @@ Portal(
                   :background="wallet.color"
                 )
 
+            ModalButton(
+              v-if="groups && $store.getters['user/isDevUser']"
+              :name="$t('groups.show')"
+              icon="mdi mdi-folder-multiple-outline"
+              @onClick="showModalGroups = true"
+            )
+
         .pt-4.px-4.flex-center
           .cursor-pointer.grow.py-3.px-5.flex-center.rounded-full.text-sm.bg-skin-item-main-bg.hocus_bg-skin-item-main-hover(
             class="basis-1/2 max-w-[280px]"
@@ -180,6 +196,25 @@ Portal(
     @onClose="showModalConfirm = false"
     @onConfirm="handleDeleteConfirm"
   )
+
+  //- groups
+  Portal(
+    v-if="groups && $store.getters['user/isDevUser'] && showModalGroups"
+    to="modal"
+  )
+    ModalBottom(
+      :title="$t('groups.title')"
+      paddingless
+      @onClose="showModalGroups = false"
+    )
+      template(v-for="(group, groupId) in groups")
+        .groupItem(@click="toogleAddToGroup(groupId)")
+          .groupItem__active
+            template(v-if="trn && trn.groups && trn.groups[groupId]")
+              .mdi.mdi-check
+            template(v-else)
+              .mdi.mdi-plus
+          .groupItem__name {{ group.name }}
 </template>
 
 <style lang="stylus" scoped>

@@ -1,4 +1,9 @@
+import { demo } from '~/components/demo/locale-en'
+import { groups } from '~/components/groups/locale-en'
 export default {
+  demo,
+  groups,
+
   common: {
     date: 'Date',
     open: 'Open',
