@@ -3,6 +3,7 @@ export default {
     date: 'Дата',
     open: 'Открыть',
     all: 'Все',
+    in: 'в',
   },
 
   analytics: {
@@ -10,8 +11,6 @@ export default {
   },
 
   appName: 'Финапка',
-
-  for: 'за',
 
   locale: {
     toggle: 'Сменить язык',
@@ -22,11 +21,10 @@ export default {
     change: 'Сменить цвет оформления',
   },
 
-  backTo: 'Назад к ',
   close: 'Закрыть',
 
   transfer: {
-    titleMany: 'Переводы',
+    titleMoney: 'Переводы',
   },
 
   trnForm: {
@@ -144,6 +142,10 @@ export default {
         error: 'Напишите имя кошелька',
         exist: 'Кошелек с таким именем уже существует',
       },
+      description: {
+        label: 'Описание кошелька (не обязательно)',
+        placeholder: 'Напишите...',
+      },
       colors: {
         label: 'Цвет',
         placeholder: 'Выберите цвет',
@@ -249,6 +251,7 @@ export default {
     filter: {
       showTrnsWithDesc: 'Только с описанием',
     },
+    noTrns: 'Нет транзакций',
   },
 
   create: {

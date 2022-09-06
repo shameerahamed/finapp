@@ -86,6 +86,7 @@ const actions = trnItem => ({
     $store.dispatch('trnForm/openTrnForm', { action: 'edit', trnId: trnItem.id })
   },
 
+  // TODO: useFilter
   onSetFilter: (event) => {
     event.stopPropagation()
     setFilterCatsId(trnItem.categoryId)
@@ -116,10 +117,9 @@ div(v-if="trnsIds && trnsIds.length > 0")
   .grid(
     :class="{ 'gap-2': uiHistory }"
   )
-    .overflow-hidden.rounded-md.bg-white2(
+    .overflow-hidden.rounded-md.bg-white2.dark_bg-dark4(
       v-for="(trnsIds, date) in groupedTrns"
       :key="date"
-      class="dark_bg-dark4"
     )
       .pt-4.pb-2.px-3(
         v-if="isShowGroupDate"

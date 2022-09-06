@@ -49,7 +49,7 @@ function onClickEdit(props) {
 div
   //- Title
   .pb-2.flex.items-center.justify-between.gap-2.text-lg.text-skin-item-base(
-    v-if="trnsIds.length > 0"
+    v-if="trnsIds.length > 0 || defaultFilterTrnsPeriod"
     class="!pb-3"
   )
     .flex.gap-2.leading-none.font-nunito.font-semibold
@@ -88,12 +88,12 @@ div
       UiTabsItem(
         :isActive="filterTrnsType === 2"
         @click="setFilterTrnsType(2)"
-      ) {{ $t('transfer.titleMany') }}
+      ) {{ $t('transfer.titleMoney') }}
 
   //- Nothing
   .py-6.text-center(v-if="trnsCount === 0")
     .text-7xl.mdi.mdi-palm-tree
-    .text-md No Transactions
+    .text-md {{ $t('trns.noTrns') }}
 
   //- List
   .pb-10

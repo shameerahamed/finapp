@@ -3,6 +3,7 @@ export default {
     date: 'Date',
     open: 'Open',
     all: 'All',
+    in: 'in',
   },
 
   analytics: {
@@ -10,8 +11,6 @@ export default {
   },
 
   appName: 'Finapp',
-
-  for: 'for',
 
   locale: {
     toggle: 'Toggle locale',
@@ -22,11 +21,10 @@ export default {
     change: 'Change theme',
   },
 
-  backTo: 'Back to ',
   close: 'Close',
 
   transfer: {
-    titleMany: 'Transfers',
+    titleMoney: 'Transfers',
   },
 
   trnForm: {
@@ -143,6 +141,10 @@ export default {
         error: 'Write wallet name',
         exist: 'Wallet with same name is exist',
       },
+      description: {
+        label: 'Wallet description (not required)',
+        placeholder: 'Write...',
+      },
       colors: {
         label: 'Color',
         placeholder: 'Select color',
@@ -210,7 +212,6 @@ export default {
     shortTitle: 'Stat',
     periods: 'Summary',
     balanceTitle: 'Balance',
-    empty: 'No stat for this period',
     emptyDesc: 'Change filter, period or add new transactions.',
     customize: {
       showHistory: 'Show history',
@@ -248,6 +249,7 @@ export default {
     filter: {
       showTrnsWithDesc: 'Only with description',
     },
+    noTrns: 'No transactions',
   },
 
   create: {
